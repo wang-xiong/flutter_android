@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
-import 'package:my_flutter/ButtonRoute.dart';
-import 'package:my_flutter/FlexLayoutTestRoute.dart';
-import 'package:my_flutter/LoginRoute.dart';
-import 'package:my_flutter/StackRoute.dart';
-import 'package:my_flutter/TextRoute.dart';
-import 'package:my_flutter/WrapFlowRoute.dart';
-
-class HomeApp extends StatelessWidget {
+class DefaultRoute extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -16,15 +9,6 @@ class HomeApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue, //蓝色主题
       ),
-      routes: {
-        //注册路由表
-        "button_page": (context) => new ButtonRoute(),
-        "login_page": (context) => new LoginRoute(),
-        "text_page": (context) => new TextRoute(),
-        "flex_page": (context) => new FlexLayoutTestRoute(),
-        "wrap_flow_page": (context) => new WrapFlowRoute(),
-        "stack_page": (context) => new StackRoute(),
-      },
       home: MyHomePage(title: 'Flutter Demo Home Page'), //应用首页路由
     );
   }
@@ -104,53 +88,22 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
-            FlatButton(
-              child: Text('open button route'),
-              textColor: Colors.blue,
-              onPressed: () {
-                //1.通过路由名打开新的路由页，前提是要注册路由表
-                Navigator.pushNamed(context, "button_page");
-                //2.直接构建对象打开新的路由页
-//                Navigator.push(context,
-//                    new MaterialPageRoute(builder: (context) {
-//                  return new NewRoute();
-//                }));
-              },
-            ),
-            FlatButton(
-              child: Text('open login route'),
-              textColor: Colors.blue,
-              onPressed: () {
-                Navigator.pushNamed(context, "login_page");
-              },
-            ),
-            RaisedButton(
-              child: Text("open text page"),
-              textColor: Colors.green,
-              onPressed: () {
-                Navigator.pushNamed(context, "text_page");
-              },
-            ),
-            RaisedButton(
-              child: Text("open flex page"),
-              textColor: Colors.green,
-              onPressed: () {
-                Navigator.pushNamed(context, "flex_page");
-              },
-            ),
-            RaisedButton(
-              child: Text("open wrap_flow_page"),
-              textColor: Colors.green,
-              onPressed: () {
-                Navigator.pushNamed(context, "wrap_flow_page");
-              },
-            ),
-            RaisedButton(
-              child: Text("open stack_page"),
-              textColor: Colors.green,
-              onPressed: () {
-                Navigator.pushNamed(context, "stack_page");
-              },
+            DecoratedBox(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(colors: [Colors.red, Colors.orange[700]]),
+                borderRadius: BorderRadius.circular(6.0),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black54,
+                    offset: Offset(2.0, 2.0),
+                    blurRadius: 4.0
+                  )
+                ]
+              ),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 80.0, vertical: 18.0),
+                child: Text("test", style: TextStyle(color: Colors.white),),
+              ),
             ),
             RandomWordsWidget(),
           ],

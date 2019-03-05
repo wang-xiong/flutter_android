@@ -55,13 +55,11 @@ class TextRoute extends StatelessWidget {
     );
 
     // TODO: implement build
-    return new MaterialApp(
-        title: 'Flutter UI basic 1',
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text('Text'),
-          ),
-          body: textSection,
-        ));
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Text'),
+      ),
+      body: textSection,
+    );
   }
 }
