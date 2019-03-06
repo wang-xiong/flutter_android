@@ -11,8 +11,6 @@ Widget _widgetForRoute(String route) {
     case 'route1':
       return HomeRoute();
     default:
-      return Center(
-        child: Text('Unknown route: $route', textDirection: TextDirection.ltr),
-      );
+      return HomeRoute();
   }
 }

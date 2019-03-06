@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter/ButtonRoute.dart';
 import 'package:my_flutter/ContainerRoute.dart';
+import 'package:my_flutter/CustomScrollViewRoute.dart';
 import 'package:my_flutter/DefaultRoute.dart';
 import 'package:my_flutter/FlexLayoutTestRoute.dart';
+import 'package:my_flutter/GridViewRoute.dart';
 import 'package:my_flutter/ListViewRoute.dart';
 import 'package:my_flutter/LoginRoute.dart';
 import 'package:my_flutter/ScaffoldRoute.dart';
+import 'package:my_flutter/ScrollControllerRoute.dart';
 import 'package:my_flutter/SingleChildScrollViewTestRoute.dart';
 import 'package:my_flutter/StackRoute.dart';
 import 'package:my_flutter/TextRoute.dart';
@@ -32,6 +35,9 @@ class HomeRoute extends StatelessWidget {
         "ScaffoldRoute": (context) => new ScaffoldRoute(),
         "SingleChildScrollViewTestRoute": (context) => new SingleChildScrollViewTestRoute(),
         "ListViewRoute": (context) => new ListViewRoute(),
+        "GridViewRoute": (context) => new GridViewRoute(),
+        "CustomScrollViewRoute":(context)=> new CustomScrollViewRoute(),
+        "ScrollControllerRoute": (context) => new ScrollControllerRoute(),
       },
       home: MyHomePage(title: 'Flutter Demo Home Page'), //应用首页路由
     );
@@ -143,6 +149,30 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {
                   Navigator.pushNamed(
                       context, "ListViewRoute");
+                },
+              ),
+              RaisedButton(
+                child: Text("open GridViewRoute"),
+                textColor: Colors.green,
+                onPressed: () {
+                  Navigator.pushNamed(
+                      context, "GridViewRoute");
+                },
+              ),
+              RaisedButton(
+                child: Text("open CustomScrollViewRoute"),
+                textColor: Colors.green,
+                onPressed: () {
+                  Navigator.pushNamed(
+                      context, "CustomScrollViewRoute");
+                },
+              ),
+              RaisedButton(
+                child: Text("open ScrollControllerRoute"),
+                textColor: Colors.green,
+                onPressed: () {
+                  Navigator.pushNamed(
+                      context, "ScrollControllerRoute");
                 },
               ),
             ],
